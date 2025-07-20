@@ -32,68 +32,71 @@ const Contact = () => {
       icon: <Mail className="h-6 w-6" />,
       title: "Email Us",
       description: "Get in touch via email",
-      value: "hello@resumeforge.com",
-      action: "mailto:hello@resumeforge.com"
+      value: "bvmcraftersstudio@gmail.com",
+      action: "mailto:bvmcraftersstudio@gmail.com"
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Call Us", 
       description: "Speak directly with our team",
-      value: "+91 98765 43210",
-      action: "tel:+919876543210"
+      value: "+91 9384476534",
+      mobile: "+91 6369194095",
+      // action: "tel:+919876543210"
     },
     {
       icon: <MessageCircle className="h-6 w-6" />,
       title: "WhatsApp",
       description: "Quick chat on WhatsApp",
-      value: "+91 98765 43210",
-      action: "https://wa.me/919876543210"
+      value: "+91 9384476534",
+      // mobile: "+91 6369194095",
+      // action: "https://wa.me/919876543210"
     }
   ];
 
   const faqs = [
     {
       question: "How long does it take to complete my order?",
-      answer: "Resume designs are typically delivered within 12-24 hours, while portfolio websites take 1-3 days depending on complexity."
+      answer: "Resume designs are typically delivered within 2-3 days, while portfolio websites take 1-4 days depending on complexity."
     },
     {
       question: "Do you offer revisions?",
-      answer: "Yes! We include 2-3 rounds of revisions with every order to ensure you're completely satisfied with the final result."
+      answer: "Yes! We include 2 rounds of revisions with specific order to ensure you're completely satisfied with the final result."
     },
     {
       question: "What file formats do you provide?",
-      answer: "Resumes are delivered in PDF format (and Word for premium packages). Websites include all source code and hosting setup."
+      answer: "Resumes are delivered in PDF format. Websites include all source code."
     },
-    {
-      question: "Do you offer rush delivery?",
-      answer: "Yes, we offer express delivery for urgent requirements. Please mention your deadline when contacting us."
-    }
+    // {
+    //   question: "Do you offer rush delivery?",
+    //   answer: "Yes, we offer express delivery for urgent requirements. Please mention your deadline when contacting us."
+    // }
   ];
 
   const serviceOptions = [
     { value: "standard-resume", label: "Standard Resume (₹249)" },
     { value: "modern-resume", label: "Modern Resume (₹349)" },
-    { value: "html-1page", label: "HTML/CSS 1-Page Website (₹149)" },
-    { value: "html-2page", label: "HTML/CSS 2-Page Website (₹199)" },
-    { value: "html-3page", label: "HTML/CSS 3-Page Website (₹249)" },
-    { value: "html-4page", label: "HTML/CSS 4-Page Website (₹300)" },
-    { value: "react-1page", label: "React 1-Page Website (₹199)" },
-    { value: "react-2page", label: "React 2-Page Website (₹249)" },
-    { value: "react-3page", label: "React 3-Page Website (₹300)" },
-    { value: "react-4page", label: "React 4-Page Website (₹400)" },
-    { value: "custom", label: "Custom Requirements" }
+    { value: "html-1page", label: "HTML/CSS 1-Page Website (₹249)" },
+    { value: "html-2page", label: "HTML/CSS 2-Page Website (₹359)" },
+    { value: "html-3page", label: "HTML/CSS 3-Page Website (₹450)" },
+    { value: "html-4page", label: "HTML/CSS 4-Page Website (₹550)" },
+    { value: "react-1page", label: "React 1-Page Website (₹360)" },
+    { value: "react-2page", label: "React 2-Page Website (₹450)" },
+    { value: "react-3page", label: "React 3-Page Website (₹590)" },
+    { value: "react-4page", label: "React 4-Page Website (₹759)" },
+    { value: "custom-resume", label: "Resume - Custom Requirements" },
+    { value: "custom-portfolio", label: "Portfolio - Custom Requirements" }
   ];
 
   const process = [
     {
       step: "1",
       title: "Submit Your Request",
-      description: "Fill out our contact form with your requirements and preferences."
+      description: "Fill out our form with your requirements and preferences."
     },
     {
       step: "2",
-      title: "Consultation Call",
-      description: "We'll schedule a brief call to understand your needs better."
+      title: "Consultation Inquiry",
+      description: "We'll schedule a brief inquiry to understand your needs better."
     },
     {
       step: "3",
@@ -141,6 +144,7 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="font-medium mb-4">{method.value}</p>
+                  <p className="font-medium mb-4">{method.mobile}</p>
                   <Button variant="outline" asChild>
                     <a href={method.action} target="_blank" rel="noopener noreferrer">
                       Contact Now
@@ -187,12 +191,13 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
+                    <Label htmlFor="phone">Phone Number *</Label>
                     <Input
                       id="phone"
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       placeholder="+91 98765 43210"
+                      required
                     />
                   </div>
 
@@ -212,7 +217,7 @@ const Contact = () => {
                     </Select>
                   </div>
 
-                  <div className="space-y-2">
+                  {/* <div className="space-y-2">
                     <Label htmlFor="urgency">Timeline</Label>
                     <Select value={formData.urgency} onValueChange={(value) => setFormData({...formData, urgency: value})}>
                       <SelectTrigger>
@@ -225,17 +230,16 @@ const Contact = () => {
                         <SelectItem value="urgent">Urgent (Same day)</SelectItem>
                       </SelectContent>
                     </Select>
-                  </div>
+                  </div> */}
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Project Details *</Label>
+                    <Label htmlFor="message">Project Details</Label>
                     <Textarea
                       id="message"
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
                       placeholder="Tell us about your requirements, field of study, target companies, any specific preferences..."
                       rows={5}
-                      required
                     />
                   </div>
 
@@ -249,15 +253,15 @@ const Contact = () => {
             {/* Additional Info */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-bold mb-6">Why Choose ResumeForge?</h2>
+                <h2 className="text-3xl font-bold mb-6">Why Choose BVM Crafters Studio</h2>
                 <div className="space-y-4">
                   {[
-                    "Quick 12-48 hour delivery",
+                    "Quick 3-4 days delivery",
                     "Student-friendly pricing",
-                    "Multiple revision rounds",
-                    "ATS-optimized designs",
+                    // "Multiple revision rounds",
+                    "ATS-format designs",
                     "Mobile-responsive websites",
-                    "Free hosting included"
+                    // "Free hosting included"
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="h-5 w-5 text-green-500" />
@@ -273,11 +277,11 @@ const Contact = () => {
                   <h3 className="text-xl font-semibold">Response Time</h3>
                 </div>
                 <p className="text-muted-foreground">
-                  We respond to all inquiries within 2-4 hours during business hours (9 AM - 8 PM IST). For urgent requests, call or WhatsApp us directly.
+                  We respond to all inquiries within 8-10 hours during academic hours (9 AM - 8 PM IST). For urgent requests, WhatsApp us directly. (Sunday: Holiday)
                 </p>
               </Card>
 
-              <Card className="p-6">
+              {/* <Card className="p-6">
                 <div className="flex items-center space-x-3 mb-4">
                   <MapPin className="h-6 w-6 text-primary" />
                   <h3 className="text-xl font-semibold">Location</h3>
@@ -287,7 +291,7 @@ const Contact = () => {
                   Serving students across India<br />
                   Remote service delivery
                 </p>
-              </Card>
+              </Card> */}
             </div>
           </div>
         </div>
@@ -343,14 +347,14 @@ const Contact = () => {
           <div className="text-center mt-8">
             <p className="text-muted-foreground mb-4">Still have questions?</p>
             <Button variant="outline" asChild>
-              <a href="mailto:hello@resumeforge.com">Email Us</a>
+              <a href="mailto:bvmcraftersstudio@gmail.com">Email Us</a>
             </Button>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-gradient-hero">
+      {/* <section className="py-16 lg:py-24 bg-gradient-hero">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             Ready to Transform Your Career?
@@ -360,14 +364,14 @@ const Contact = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="xl" asChild>
-              <a href="mailto:hello@resumeforge.com">Start Your Order</a>
+              <a href="mailto:bvmcraftersstudio@gmail.com">Start Your Order</a>
             </Button>
             <Button variant="outline" size="xl" asChild>
               <Link to="/services">View Services</Link>
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

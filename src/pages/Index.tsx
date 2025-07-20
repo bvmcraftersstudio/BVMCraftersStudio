@@ -9,10 +9,10 @@ import heroImage from "@/assets/hero-image.jpg";
 
 const Index = () => {
   const stats = [
-    { number: "500+", label: "Students Helped" },
+    { number: "10+", label: "Students Helped" },
     { number: "98%", label: "Success Rate" },
-    { number: "24hr", label: "Delivery Time" },
-    { number: "4.9/5", label: "Client Rating" }
+    { number: "2-3 days", label: "Delivery Time" },
+    { number: "4.5/5", label: "Students Rating" }
   ];
 
   const features = [
@@ -24,12 +24,12 @@ const Index = () => {
     {
       icon: <Globe className="h-6 w-6" />,
       title: "Modern Portfolios",
-      description: "Responsive websites that showcase your skills and projects professionally."
+      description: "Responsive websites that showcase your skills and projects professionally through online."
     },
     {
       icon: <Zap className="h-6 w-6" />,
       title: "Quick Turnaround",
-      description: "Get your completed resume or portfolio within 24-48 hours."
+      description: "Get your completed resume or portfolio within 2-4 days."
     }
   ];
 
@@ -78,7 +78,7 @@ const Index = () => {
                   With Professional Design
                 </h1>
                 <p className="text-lg text-muted-foreground max-w-lg">
-                  Get ATS-friendly resumes and stunning portfolio websites that help you stand out in today's competitive job market. Trusted by 500+ students across India.
+                  Get ATS-friendly <span className="font-bold text-blue-600">Resumes</span> and stunning <span className="font-bold text-blue-600">Portfolio websites</span>  that help you stand out in today's competitive job market. Trusted by 50+ students.
                 </p>
               </div>
               
@@ -88,8 +88,11 @@ const Index = () => {
                     View Our Services <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                {/* <Button variant="outline" size="lg" asChild>
                   <Link to="/portfolio">See Our Work</Link>
+                </Button> */}
+                <Button variant="outline" size="lg" asChild>
+                  <Link to="/contact">Contact Us</Link>
                 </Button>
               </div>
 
@@ -113,11 +116,11 @@ const Index = () => {
               <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-xl shadow-lg animate-float">
                 <div className="flex items-center space-x-2">
                   <div className="flex -space-x-1">
-                    {[1,2,3].map((i) => (
+                    {[].map((i) => (
                       <div key={i} className="w-6 h-6 bg-primary rounded-full border-2 border-white"></div>
                     ))}
                   </div>
-                  <span className="text-sm font-medium">500+ Happy Students</span>
+                  <span className="text-sm font-medium">50+ Happy Students</span>
                 </div>
               </div>
             </div>
@@ -130,10 +133,10 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Why Choose <span className="text-primary">ResumeForge</span>?
+              Why Choose <span className="text-primary">BVM Crafters</span>?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We understand the challenges students face in today's job market. Our services are designed specifically for students, by students.
+              We understand the challenges students face in today's job market. Our services are designed specifically <span className="font-bold text-blue-600">for students</span>, <span className="font-bold text-gray-600">by students</span>.
             </p>
           </div>
 
@@ -176,8 +179,8 @@ const Index = () => {
                   {[
                     "ATS-friendly formatting",
                     "Clean, professional design",
-                    "Tailored for your field",
-                    "Multiple revisions included"
+                    "Customized for your field/role",
+                    "Shared as PDF"  
                   ].map((item, index) => (
                     <li key={index} className="flex items-center space-x-2">
                       <CheckCircle className="h-4 w-4 text-green-500" />
@@ -210,8 +213,7 @@ const Index = () => {
                   {[
                     "Responsive design",
                     "Modern, professional look",
-                    "Free hosting included",
-                    "Easy to update"
+                    "Easy to update",
                   ].map((item, index) => (
                     <li key={index} className="flex items-center space-x-2">
                       <CheckCircle className="h-4 w-4 text-green-500" />
@@ -222,7 +224,7 @@ const Index = () => {
                 
                 <div className="flex items-center justify-between pt-4">
                   <div>
-                    <span className="text-2xl font-bold text-primary">₹149</span>
+                    <span className="text-2xl font-bold text-primary">₹249</span>
                     <span className="text-muted-foreground"> onwards</span>
                   </div>
                   <Button variant="outline" asChild>
@@ -236,7 +238,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 lg:py-24">
+      {/* <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">Student Success Stories</h2>
@@ -266,7 +268,7 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-16 lg:py-24 bg-gradient-hero">
@@ -279,11 +281,11 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="xl" asChild>
-              <Link to="/contact">Get Started Today</Link>
+              <Link to="/contact">Design your self Today</Link>
             </Button>
-            <Button variant="outline" size="xl" asChild>
+            {/* <Button variant="outline" size="xl" asChild>
               <Link to="/portfolio">View Our Work</Link>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>

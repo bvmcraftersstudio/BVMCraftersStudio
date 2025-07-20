@@ -9,28 +9,31 @@ import { Link } from "react-router-dom";
 const About = () => {
   const founders = [
     {
-      name: "Aryan Patel",
-      role: "Co-Founder & Lead Designer",
-      education: "B.Tech Computer Science, IIT Delhi",
+      name: "VISHALINI K",
+      role: "Founder & Backend Developer",
+      education: "B.Tech KSR College of Engineering, Namakkal",
       image: "/placeholder.svg",
-      bio: "Passionate about creating beautiful, functional designs that help students showcase their potential.",
-      skills: ["UI/UX Design", "React Development", "Brand Design"]
+      bio: "Passionate in backend development and functional design that help students showcase their potentials",
+      skills: ["BackendDevelopment","UI/UX Design", "React Development","Full Stack"],
+      OurPortfolio : ""
     },
     {
-      name: "Priya Sharma", 
-      role: "Co-Founder & Frontend Developer",
-      education: "B.Tech Information Technology, BITS Pilani",
+      name: "MUKILAN B", 
+      role: "Co-Founder & Full Stack Developer",
+      education: "B.Tech KSR College of Engineering, Namakkal",
       image: "/placeholder.svg",
       bio: "Specializes in creating responsive, modern websites that perform excellently across all devices.",
-      skills: ["Frontend Development", "React", "Tailwind CSS"]
+      skills: ["Frontend Development", "React", "Tailwind CSS"],
+      OurPortfolio : ""
     },
     {
-      name: "Rohit Kumar",
-      role: "Co-Founder & Business Lead", 
-      education: "BBA Marketing, SRCC Delhi University",
+      name: "BOOPATHY M",
+      role: "Initiator & Product Designer and Developer", 
+      education: "B.Tech KSR College of Engineering, Namakkal",
       image: "/placeholder.svg",
       bio: "Focuses on understanding client needs and ensuring exceptional service delivery.",
-      skills: ["Business Strategy", "Client Relations", "Marketing"]
+      skills: ["UI/UX Design","Business Strategy", "Client Relations", "Marketing"],
+      OurPortfolio : "https://portfolioboopathy.netlify.app/"
     }
   ];
 
@@ -54,32 +57,33 @@ const About = () => {
 
   const milestones = [
     {
-      year: "2023",
-      title: "Founded ResumeForge",
+      year: "2025",
+      title: "Founded BVMCS",
       description: "Started with a mission to help fellow students succeed in their career journey."
     },
     {
-      year: "2023",
-      title: "First 100 Students",
-      description: "Helped our first 100 students with professional resumes and portfolios."
+      year: "2025",
+      title: "First 10 Students",
+      description: "Helped our classmate with professional resumes and portfolios."
     },
+    // {
+    //   year: "2024", 
+    //   title: "7 Success Stories",
+    //   description: "Reached 500+ satisfied students with 98% client satisfaction rate."
+    // },
     {
-      year: "2024", 
-      title: "500+ Success Stories",
-      description: "Reached 500+ satisfied students with 98% client satisfaction rate."
-    },
-    {
-      year: "2024",
+      year: "2025",
+      trouble:"b",
       title: "Expanding Services",
-      description: "Introduced React-based portfolio websites and career consultation services."
+      description: "We reached You. Introduced React-based portfolio websites and resume designing services."
     }
   ];
 
   const achievements = [
-    { number: "500+", label: "Students Helped" },
+    { number: "10+", label: "Students Helped" },
     { number: "98%", label: "Success Rate" },
-    { number: "4.9/5", label: "Average Rating" },
-    { number: "24hrs", label: "Average Delivery" }
+    { number: "4.5/5", label: "Average Rating" },
+    { number: "2-3 days", label: "Average Delivery" }
   ];
 
   return (
@@ -93,7 +97,7 @@ const About = () => {
             🎓 Our Story
           </Badge>
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-            About <span className="bg-gradient-primary bg-clip-text text-transparent">ResumeForge</span>
+            About <span className="bg-gradient-primary bg-clip-text text-transparent">BVMCS</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We're three passionate college students who transformed our own career challenges into a mission to help fellow students succeed.
@@ -114,7 +118,7 @@ const About = () => {
                 After helping our friends and classmates with their applications and seeing their success in landing internships and jobs, we decided to turn our passion into a service that could help students across India.
               </p>
               <p className="text-lg text-muted-foreground">
-                Today, we've helped over 500 students transform their career prospects with professional designs that truly reflect their potential.
+                Today, we've helped over 50+ students transform their career prospects with professional designs that truly reflect their potential.
               </p>
             </div>
             
@@ -164,6 +168,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {founders.map((founder, index) => (
+              <Link to={founder.OurPortfolio}>
               <Card key={index} className="p-6 text-center hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -184,6 +189,7 @@ const About = () => {
                   </div>
                 </CardContent>
               </Card>
+              </Link>
             ))}
           </div>
         </div>
@@ -232,6 +238,7 @@ const About = () => {
                     <Card className="p-6 hover:shadow-elegant transition-all duration-300">
                       <CardHeader>
                         <Badge variant="secondary" className="w-fit text-primary font-bold">{milestone.year}</Badge>
+                        {/* <Badge variant="secondary" className="w-fit text-primary font-bold">{milestone.year}</Badge> */}
                         <CardTitle className="text-xl">{milestone.title}</CardTitle>
                       </CardHeader>
                       <CardContent>
@@ -296,7 +303,7 @@ const About = () => {
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  500+ students have successfully landed jobs and internships with our help
+                  Students have successfully landed jobs and internships with our help
                 </CardDescription>
               </CardContent>
             </Card>
@@ -305,7 +312,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24">
+      {/* <section className="py-16 lg:py-24">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             Ready to Join Our Success Stories?
@@ -322,7 +329,7 @@ const About = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

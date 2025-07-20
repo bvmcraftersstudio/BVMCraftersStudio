@@ -10,7 +10,6 @@ const Navbar = () => {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
-    { name: "Portfolio", path: "/portfolio" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
@@ -23,9 +22,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg"></div>
+            {/* <div className="w-8 h-8 bg-gradient-primary rounded-lg"></div> */}
             <span className="font-bold text-xl bg-gradient-primary bg-clip-text text-transparent">
-              ResumeForge
+              BVM Crafters Studio
             </span>
           </Link>
 
@@ -44,9 +43,9 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <Button variant="hero" size="sm">
+            {/* <Button variant="hero" size="sm">
               Get Started
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile menu button */}
