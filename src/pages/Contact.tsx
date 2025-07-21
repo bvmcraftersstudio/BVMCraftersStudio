@@ -49,7 +49,7 @@ const Contact = () => {
       description: "Quick chat on WhatsApp",
       value: "+91 9384476534",
       // mobile: "+91 6369194095",
-      // action: "https://wa.me/919876543210"
+      action: "https://wa.me/919384476534"
     }
   ];
 
