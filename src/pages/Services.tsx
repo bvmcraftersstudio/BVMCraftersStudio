@@ -9,12 +9,12 @@ import { Link } from "react-router-dom";
 const Services = () => {
   const resumePackages = [
     {
-      name: "Standard Resume",
+      name: "Simple Resume",
       price: "₹249",
-      description: "Perfect for internships and entry-level positions",
+      description: "Perfect for internships",
       features: [
         "Clean, professional design",
-        "ATS-friendly formatting",
+        // "ATS-friendly formatting",
         "1 page layout",
         "PDF delivery",
         "Within 3 days delivery"
@@ -24,16 +24,43 @@ const Services = () => {
     {
       name: "Modern Resume",
       price: "₹349",
-      description: "Advanced design for competitive applications",
+      description: "Accepted for Training",
       features: [
         "Modern, eye-catching design",
         "ATS-optimized format",
         "1-2 page layout (based on need)",
         "PDF formats",
-        "2 rounds of revisions",
+        "1 rounds of revisions",
         "Within 2 days delivery"
       ],
       popular: true
+    },
+    {
+      name: "Corporate Resume",
+      price: "₹249",
+      description: "Perfect for entry-level positions",
+      features: [
+        "Clean, corporate friendly design",
+        "ATS-friendly formatting",
+        "1 page layout",
+        "PDF delivery (or) Blueprint as PPT",
+        "1 rounds of revisions",
+        "Within 2-3 days delivery"
+      ],
+      popular: true
+    },
+    {
+      name: "Professional Resume",
+      price: "₹249",
+      description: "Perfect for next step in your career growth",
+      features: [
+        "Clean, professional design",
+        "ATS-friendly formatting",
+        "1-2 page layout (based on needs)",
+        "PDF delivery (or) Blueprint as PPT",
+        "Within 1-3 days delivery"
+      ],
+      popular: false
     }
   ];
 
@@ -41,10 +68,10 @@ const Services = () => {
     category: "HTML/CSS/JS Portfolio",
     formLink: "https://docs.google.com/forms/d/e/1FAIpQLSeeaJcJzwjHKJXeHSzK8Oq23xwA_r5h1IwYpj4eDaETNvsPMg/viewform?usp=header",
     packages: [
-      { pages: "1 Page", price: "₹249", description: "Perfect for simple portfolios", offer: "+29 for hosting" },
-      { pages: "2 Pages", price: "₹359", description: "About + Portfolio showcase", offer: "+29 for hosting" },
-      { pages: "3 Pages", price: "₹450", description: "Complete professional presence", offer: "+19 for hosting" },
-      { pages: "4 Pages", price: "₹550", description: "Comprehensive portfolio site", offer: "Free Hosting" }
+      { pages: "1 Page", price: "₹249", description: "Perfect for simple portfolios", offer: "+29 for hosting", popular: false },
+      { pages: "2 Pages", price: "₹359", description: "About + Portfolio showcase", offer: "+29 for hosting", popular: true },
+      { pages: "3 Pages", price: "₹450", description: "Complete professional presence", offer: "+19 for hosting", popular: false },
+      { pages: "4 Pages", price: "₹550", description: "Comprehensive portfolio site", offer: "Free Hosting", popular: true }
     ],
     recommended: false
   };
@@ -53,10 +80,10 @@ const Services = () => {
     category: "React/Tailwind CSS Portfolio",
     formLink: "https://docs.google.com/forms/d/e/1FAIpQLSc6IFoEo_QUwewPwHu3GK3-1HqeMfdwQvyAPwqYeUH2z2NEUQ/viewform?usp=header",
     packages: [
-      { pages: "1 Page", price: "₹360", description: "Modern single-page portfolio", offer: "+49 for hosting" },
-      { pages: "2 Pages", price: "₹450", description: "Advanced portfolio with navigation", offer: "+49 for hosting" },
-      { pages: "3 Pages", price: "₹590", description: "Complete student portfolio", offer: "Free Hosting" },
-      { pages: "4 Pages", price: "₹759", description: "Student portfolio with smooth attractive design", offer: "Free Hosting" }
+      { pages: "1 Page", price: "₹360", description: "Modern single-page portfolio", offer: "+49 for hosting", popular: true },
+      { pages: "2 Pages", price: "₹450", description: "Advanced portfolio with navigation", offer: "+49 for hosting", popular: false },
+      { pages: "3 Pages", price: "₹590", description: "Complete student portfolio", offer: "Free Hosting", popular: false },
+      { pages: "4 Pages", price: "₹759", description: "Student portfolio with smooth attractive design", offer: "Free Hosting", popular: true }
     ],
     recommended: true
   }
@@ -68,7 +95,7 @@ const Services = () => {
     "Mobile-responsive design",
     "Professional project showcase",
     "Social media links",
-    "Free hosting for 1 year",
+    // "Free hosting for 1 year",
     "Easy content updates",
   ];
 
@@ -202,13 +229,18 @@ const Services = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {category.packages.map((pkg, pkgIndex) => (
-                    <Card key={pkgIndex} className="relative text-center p-6 hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
+                    <Card key={pkgIndex} className={`relative text-center p-6 hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 ${pkg.popular ? 'ring-2 ring-primary shadow-glow' : ''}`}>
 
                       {/* Offer Badge with Animation */}
                       {pkg.offer && (
-                        <div className="absolute top-2 right-2 bg-purple-500 text-white text-xs px-2 py-1 rounded animate-bounce-slow z-10 shadow-md">
-                        {pkg.offer}
-                      </div>
+                        <div className="absolute top-2 right-2 bg-rose-400 text-white text-xs px-2 py-1 rounded animate-bounce-slow z-10 shadow-md">
+                          {pkg.offer}
+                        </div>
+                      )}
+                      {pkg.popular && (
+                        <Badge variant="outline" className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
+                          Most Popular
+                        </Badge>
                       )}
 
                       <CardHeader>
@@ -232,7 +264,7 @@ const Services = () => {
 
           <div className="text-center mt-12">
             <Card className="inline-block p-6 bg-primary/10 border-primary/20">
-              <div className="text-lg font-semibold mb-2">Need Custom Pages?</div>
+              <div className="text-lg font-semibold mb-2">Need More Pages?</div>
               <div className="text-muted-foreground mb-4">We offer customized solutions based on your specific requirements</div>
               <Button variant="hero" asChild>
                 <Link to="/contact">Get Custom Quote</Link>
