@@ -244,7 +244,7 @@ const Contact = () => {
                   </div>
 
                   <Button type="submit" variant="hero" size="lg" className="w-full">
-                    Send Message
+                    <a href="mailto:bvmcraftersstudio@gmail.com">Send Message</a> 
                   </Button>
                 </form>
               </Card>
